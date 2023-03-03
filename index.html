@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>画像切り替えサンプル</title>
+	<style>
+		/* 画像のスタイル */
+		#main-image {
+			width: 100%;
+			max-width: 500px;
+			height: auto;
+		}
+		/* サムネイル画像のスタイル */
+		.thumbnail {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			border: 2px solid gray;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<!-- メイン画像 -->
+	<img id="main-image" src="https://dummyimage.com/500x500/000/fff" alt="メイン画像">
+
+	<!-- サムネイル画像 -->
+	<div id="thumbnail-images">
+		<img class="thumbnail" src="https://dummyimage.com/100x100/00f/fff" alt="サムネイル画像1">
+		<img class="thumbnail" src="https://dummyimage.com/100x100/f00/fff" alt="サムネイル画像2">
+		<img class="thumbnail" src="https://dummyimage.com/100x100/0f0/fff" alt="サムネイル画像3">
+	</div>
+
+	<!-- JavaScript -->
+	<script>
+		// サムネイル画像をクリックしたときの処理
+		document.querySelectorAll('.thumbnail').forEach(function(thumbnail) {
+			thumbnail.addEventListener('click', function() {
+				document.getElementById('main-image').src = this.src;
+			});
+		});
+	</script>
+</body>
+</html>
