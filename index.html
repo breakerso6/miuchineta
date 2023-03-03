@@ -8,6 +8,7 @@
 			width: 100%;
 			max-width: 500px;
 			height: auto;
+			display: none; /* 最初は非表示にする */
 		}
 		/* オレンジ色の楕円のスタイル */
 		#orange-circle {
@@ -24,7 +25,7 @@
 </head>
 <body>
 	<!-- メイン画像 -->
-	<img id="main-image" src="https://dummyimage.com/500x500/000/fff" alt="メイン画像">
+	<img id="main-image" src="" alt="メイン画像">
 
 	<!-- オレンジ色の楕円 -->
 	<div id="orange-circle"></div>
@@ -33,6 +34,7 @@
 	<script>
 		// オレンジ色の楕円をクリックしたときの処理
 		document.getElementById('orange-circle').addEventListener('click', function() {
+			document.getElementById('main-image').style.display = 'block'; /* 表示する */
 			document.getElementById('main-image').src = 'https://dummyimage.com/500x500/f00/fff';
 		});
 	</script>
