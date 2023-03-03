@@ -9,12 +9,15 @@
 			max-width: 500px;
 			height: auto;
 		}
-		/* サムネイル画像のスタイル */
-		.thumbnail {
+		/* オレンジ色の楕円のスタイル */
+		#orange-circle {
+			position: fixed;
+			bottom: 20px;
+			left: calc(50% - 50px); /* 50pxは楕円の直径の半分 */
 			width: 100px;
-			height: 100px;
-			margin: 10px;
-			border: 2px solid gray;
+			height: 50px;
+			border-radius: 50px / 25px;
+			background-color: orange;
 			cursor: pointer;
 		}
 	</style>
@@ -23,20 +26,14 @@
 	<!-- メイン画像 -->
 	<img id="main-image" src="https://dummyimage.com/500x500/000/fff" alt="メイン画像">
 
-	<!-- サムネイル画像 -->
-	<div id="thumbnail-images">
-		<img class="thumbnail" src="https://dummyimage.com/100x100/00f/fff" alt="サムネイル画像1">
-		<img class="thumbnail" src="https://dummyimage.com/100x100/f00/fff" alt="サムネイル画像2">
-		<img class="thumbnail" src="https://dummyimage.com/100x100/0f0/fff" alt="サムネイル画像3">
-	</div>
+	<!-- オレンジ色の楕円 -->
+	<div id="orange-circle"></div>
 
 	<!-- JavaScript -->
 	<script>
-		// サムネイル画像をクリックしたときの処理
-		document.querySelectorAll('.thumbnail').forEach(function(thumbnail) {
-			thumbnail.addEventListener('click', function() {
-				document.getElementById('main-image').src = this.src;
-			});
+		// オレンジ色の楕円をクリックしたときの処理
+		document.getElementById('orange-circle').addEventListener('click', function() {
+			document.getElementById('main-image').src = 'https://dummyimage.com/500x500/f00/fff';
 		});
 	</script>
 </body>
